@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,13 +16,88 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5M6-28-7mU">
+                                <rect key="frame" x="20" y="28" width="335" height="619"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="M2b-yi-Vvz">
+                                        <rect key="frame" x="0.0" y="49.5" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M2b-yi-Vvz" id="pNN-au-VlE">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hGG-Qq-rD5" kind="presentation" identifier="segueForDetailView" id="19H-bk-Vnv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rbt-Uq-IhO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="l3t-Qw-g1J"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="5M6-28-7mU" id="Aqx-VJ-nha"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="146.5" y="320.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="hp2-PH-E0k">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="hGG-Qq-rD5" customClass="DetailViewController" customModule="_DTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J4J-Fs-NKU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ILT-VP-qgb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hL0-Ug-Pie">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1t-nc-yqt">
+                                <rect key="frame" x="12" y="28" width="89" height="30"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="hGG-Qq-rD5" eventType="touchUpInside" id="EQl-CX-Ls7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6B-GZ-8Ci">
+                                <rect key="frame" x="98" y="303" width="178" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W6B-GZ-8Ci" secondAttribute="height" multiplier="178:61" id="0kC-83-V6T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="W6B-GZ-8Ci" secondAttribute="trailing" constant="79" id="7P6-L9-9KD"/>
+                            <constraint firstItem="W6B-GZ-8Ci" firstAttribute="top" secondItem="J4J-Fs-NKU" secondAttribute="bottom" constant="283" id="9zC-XZ-GDd"/>
+                            <constraint firstItem="r1t-nc-yqt" firstAttribute="leading" secondItem="hL0-Ug-Pie" secondAttribute="leadingMargin" constant="-4" id="Mmx-zJ-oO7"/>
+                            <constraint firstItem="r1t-nc-yqt" firstAttribute="top" secondItem="J4J-Fs-NKU" secondAttribute="bottom" constant="8" id="WXT-V7-n95"/>
+                            <constraint firstItem="W6B-GZ-8Ci" firstAttribute="centerX" secondItem="hL0-Ug-Pie" secondAttribute="centerX" id="l8L-qH-phz"/>
+                            <constraint firstItem="W6B-GZ-8Ci" firstAttribute="centerY" secondItem="hL0-Ug-Pie" secondAttribute="centerY" id="nFg-09-X7I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="W6B-GZ-8Ci" id="R58-Y1-fTF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5h-aL-0CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675.5" y="286.5"/>
         </scene>
     </scenes>
 </document>

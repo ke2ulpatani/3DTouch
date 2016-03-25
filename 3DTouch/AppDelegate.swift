@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        if let shortcutItems = application.shortcutItems where shortcutItems.isEmpty {
+        if application.shortcutItems!.isEmpty {
             
             let dynamicShortCutItem = UIApplicationShortcutItem(type: "Type2", localizedTitle: "Dynamic Title", localizedSubtitle: "Dynamic Subtitle", icon: UIApplicationShortcutIcon(type: UIApplicationShortcutIconType.Love  ), userInfo: nil)
             
@@ -48,6 +48,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        
+        if shortcutItem.type == "Type2"
+        {
+            print("AppDelegate's method called")
+            let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("detailVC") as! DetailViewController
+            detailVC.input = "Directly from outside"
+//            detailVC.setText("Directly from outside")
+            
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(detailVC, animated: false, completion: {
+                () -> Void in
+                
+                completionHandler(true)
+            })
+            
+        }
+    }
     
 }
 
