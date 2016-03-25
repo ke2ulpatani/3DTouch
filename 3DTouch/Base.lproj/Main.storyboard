@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="5M6-28-7mU">
-                                <rect key="frame" x="20" y="28" width="335" height="619"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="M2b-yi-Vvz">
-                                        <rect key="frame" x="0.0" y="49.5" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M2b-yi-Vvz" id="pNN-au-VlE">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -51,6 +51,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="146.5" y="320.5"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="Ejz-2f-Exh">
+            <objects>
+                <viewController storyboardIdentifier="previewVC" id="njI-75-3gt" customClass="PreviewViewController" customModule="_DTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SNe-5I-xjN"/>
+                        <viewControllerLayoutGuide type="bottom" id="sr3-mc-BgM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fep-4e-u1R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-9x-04i">
+                                <rect key="frame" x="108" y="54" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74233392009693189" green="1" blue="0.4919834355659366" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gge-9x-04i" secondAttribute="trailing" constant="88" id="FMP-P3-xsV"/>
+                            <constraint firstItem="Gge-9x-04i" firstAttribute="centerY" secondItem="fep-4e-u1R" secondAttribute="centerY" id="GEz-iM-oKn"/>
+                            <constraint firstItem="Gge-9x-04i" firstAttribute="leading" secondItem="fep-4e-u1R" secondAttribute="leadingMargin" constant="88" id="tdF-I3-tjE"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="200"/>
+                    <connections>
+                        <outlet property="label" destination="Gge-9x-04i" id="m20-xv-l9V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zJy-Tl-Q6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146.5" y="890"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="hp2-PH-E0k">
@@ -81,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.54799330502767418" green="0.89842219694419523" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="W6B-GZ-8Ci" secondAttribute="trailing" constant="79" id="7P6-L9-9KD"/>
                             <constraint firstItem="W6B-GZ-8Ci" firstAttribute="top" secondItem="J4J-Fs-NKU" secondAttribute="bottom" constant="283" id="9zC-XZ-GDd"/>
@@ -97,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5h-aL-0CL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675.5" y="286.5"/>
+            <point key="canvasLocation" x="709.5" y="320.5"/>
         </scene>
     </scenes>
 </document>

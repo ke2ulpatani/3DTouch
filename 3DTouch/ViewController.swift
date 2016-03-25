@@ -20,7 +20,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-//        self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.Available {
+            registerForPreviewingWithDelegate(self, sourceView: tableView)
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,10 +40,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
+            cell.textLabel?.text = datasource[indexPath.row]
+            return cell
+        }
+        else{
+            return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        }
+//        return nil
 //        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
-        cell.textLabel?.text = datasource[indexPath.row]
-        return cell
+//        cell.textLabel?.text = datasource[indexPath.row]
+//        return cell
     }
     
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B4433691CA59E3C00904DC0 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4433681CA59E3C00904DC0 /* ViewControllerExtension.swift */; };
+		7B44336B1CA5A0C500904DC0 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44336A1CA5A0C500904DC0 /* PreviewViewController.swift */; };
 		7B71D28D1CA43DE600590C34 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71D28C1CA43DE600590C34 /* DetailViewController.swift */; };
 		7BEA90EE1CA1B2D20008E490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA90ED1CA1B2D20008E490 /* AppDelegate.swift */; };
 		7BEA90F01CA1B2D20008E490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA90EF1CA1B2D20008E490 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B4433681CA59E3C00904DC0 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		7B44336A1CA5A0C500904DC0 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		7B71D28C1CA43DE600590C34 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7BEA90EA1CA1B2D20008E490 /* 3DTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BEA90ED1CA1B2D20008E490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				7BEA90F61CA1B2D20008E490 /* LaunchScreen.storyboard */,
 				7BEA90F91CA1B2D20008E490 /* Info.plist */,
 				7B71D28C1CA43DE600590C34 /* DetailViewController.swift */,
+				7B4433681CA59E3C00904DC0 /* ViewControllerExtension.swift */,
+				7B44336A1CA5A0C500904DC0 /* PreviewViewController.swift */,
 			);
 			path = 3DTouch;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4433691CA59E3C00904DC0 /* ViewControllerExtension.swift in Sources */,
 				7B71D28D1CA43DE600590C34 /* DetailViewController.swift in Sources */,
 				7BEA90F01CA1B2D20008E490 /* ViewController.swift in Sources */,
+				7B44336B1CA5A0C500904DC0 /* PreviewViewController.swift in Sources */,
 				7BEA90EE1CA1B2D20008E490 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
